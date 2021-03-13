@@ -1,3 +1,4 @@
+// this code does decoding as well as acts like adder as well as does logical operation like left shift right shift retain and load data , load data by right bit and left bit also
 module logic_tile(out,clock,in1,in2,in3,in4,in5);
     input clock;
     input in1;
