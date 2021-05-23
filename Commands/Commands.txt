@@ -1,0 +1,46 @@
+To run the file:
+iverilog filename.v
+
+To run on testbench:
+iverilog FGPA.v testbench.v
+
+To execute it:
+vvp a.out
+
+
+
+
+To run waveform:
+gtkwave ha.vcd(where the file was dumped)
+
+
+Executing on edaplayground:
+1) Put your code in design.sv
+2) Put your test bench in testbench.v
+3) Put your mem files in +
+4) Select language icarus verilog 0.10.0 ...
+5) Save and run
+6) Tick Open EPWave after run if not
+7) You can also select many from drop down
+
+
+Error part:
+Part 1):
+If you get error as 
+testbench.v:12: error: reg lab5_output; cannot be driven by primitives or continuous assignment.
+testbench.v:12: error: Output port expression must support continuous assignment.
+testbench.v:12:      : Port 4 (out_final) of universal_shift_register is connected to lab5_output
+2 error(s) during elaboration.
+
+change reg to wire
+
+Part 2):
+1) Error:I give up
+Check brackets
+
+
+
+
+Problems:
+1) In verilog the bit from mem will be selected from right to left in configure.mem
+	For example if you select mem[{0,0,0,0,0}] from mem AAAAAAAA then 0th bit from right ie 0 will be selected
